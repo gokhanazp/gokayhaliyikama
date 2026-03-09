@@ -1,13 +1,16 @@
 import { useParams, Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-import { siteConfig, services } from '../data/content';
+import { siteConfig, services, regions } from '../data/content';
 import { MessageCircle, Phone, ArrowLeft, ShieldCheck, Truck } from 'lucide-react';
-import { unslugify } from '../utils/slugify';
+import { unslugify, slugify } from '../utils/slugify';
 import logo from '../assets/gokayhalilogo.png';
 
 const RegionDetail = () => {
   const { regionName } = useParams();
-  const formattedRegion = regionName ? unslugify(regionName) : '';
+  
+  // Find original region name from data to preserve Turkish characters
+  const originalRegion = regions.find(r => slugify(r) === regionName);
+  const formattedRegion = originalRegion || (regionName ? unslugify(regionName) : '');
 
   const seoTitle = `${formattedRegion} Halı Yıkama - Gökay Halı Yıkama %100 Temizlik`;
   const seoDesc = `${formattedRegion} bölgesinde profesyonel halı, koltuk ve perde yıkama hizmeti. Gökay Halı Yıkama ile ${formattedRegion} sakinlerine özel premium hijyen ve hızlı teslimat.`;
