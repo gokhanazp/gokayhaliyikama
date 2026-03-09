@@ -28,7 +28,7 @@ const Hero = () => {
 
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight tracking-tight">
             Gökyüzü Kadar <span className="text-accent underline decoration-white/20 underline-offset-8">Gök</span>,<br />
-            Ay Kadar <span className="text-accent italic">Temiz</span> Hizmet
+            Ay Kadar <span className="text-accent italic">Parlak</span> Hizmet
           </h1>
 
           <p className="text-lg md:text-xl text-white/80 mb-10 max-w-2xl leading-relaxed">
