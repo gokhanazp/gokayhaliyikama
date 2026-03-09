@@ -1,0 +1,38 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+:root {
+  --primary: #0A192F;
+  --accent: #D4AF37;
+  --secondary: #E6F1FF;
+}
+
+@layer base {
+  body {
+    @apply bg-white text-primary font-sans;
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-white/10 backdrop-blur-md border border-white/20 shadow-xl;
+  }
+  
+  .btn-primary {
+    @apply bg-accent hover:bg-accent-light text-primary font-bold py-3 px-8 rounded-full transition-all duration-300 shadow-lg hover:shadow-accent/40 active:scale-95 flex items-center justify-center gap-2;
+  }
+  
+  .btn-whatsapp {
+    @apply bg-[#25D366] hover:bg-[#20BA5A] text-white font-bold py-3 px-8 rounded-full transition-all duration-300 shadow-lg hover:shadow-[#25D366]/40 active:scale-95 flex items-center justify-center gap-2;
+  }
+  
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold mb-6 text-primary relative inline-block;
+  }
+  
+  .section-title::after {
+    @apply content-[''] absolute -bottom-2 left-0 w-1/2 h-1 bg-accent rounded-full;
+  }
+}
